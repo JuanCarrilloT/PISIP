@@ -1,4 +1,0 @@
-SELECT FirstName, LastName, Department  
-FROM HumanResources.vEmployeeDepartmentHistory  
-WHERE FirstName = @FirstName AND LastName = @LastName  
-    AND EndDate IS NULL;  
