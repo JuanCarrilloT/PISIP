@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record model="ir.ui.menu" id="contacts.menu_partner_category_form" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="contacts.menu_partner_title_contact" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="contacts.res_partner_industry_menu" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="contacts.menu_config_bank_accounts" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record id='view_partner_form_inherit' model='ir.ui.view'>
+		<field name="name">module_settings.view_partner_form_inherit</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='vat']" position="attributes">
+				<attribute name="string">Cédula:</attribute>
+			</xpath>
+			<xpath expr="//field[@name='category_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//field[@name='website']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//field[@name='lang']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//notebook" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
