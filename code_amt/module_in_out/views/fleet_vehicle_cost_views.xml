@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record model="ir.ui.menu" id="fleet.menu_fleet_reporting" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="fleet.fleet_vehicle_costs_menu" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="fleet.fleet_vehicle_log_contract_menu" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="fleet.fleet_vehicle_log_fuel_menu" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="fleet.fleet_vehicle_log_services_menu" forcecreate="0">
+		<field name="groups_id" eval="[(6, 0, [ref('module_settings.group_empty')])]"/>
+	</record>
+	
+	<record id='fleet_vehicle_log_fuel_view_form_inherit' model='ir.ui.view'>
+		<field name="name">module_in_out.fleet_vehicle_log_fuel_view_form_inherit</field>
+		<field name="model">fleet.vehicle.log.fuel</field>
+		<field name="inherit_id" ref="fleet.fleet_vehicle_log_fuel_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='price_per_liter']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//field[@name='purchaser_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//field[@name='vendor_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+		</field>
+	</record>
+	
+	<record id='fleet_vehicle_log_services_view_form_inherit' model='ir.ui.view'>
+		<field name="name">module_in_out.fleet_vehicle_log_services_view_form_inherit</field>
+		<field name="model">fleet.vehicle.log.services</field>
+		<field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='purchaser_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<xpath expr="//field[@name='vendor_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+		</field>
+	</record>
+	
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<openerp>
+	<data>
+
+		<!-- Grupo vacío para esconder Menús -->
+		<record model="res.groups" id="group_empty">
+			<field name="name">Grupo Vacío</field>
+		</record>
+
+	</data>
+</openerp>
