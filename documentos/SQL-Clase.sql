@@ -5,6 +5,8 @@ CREATE TABLE Perfil(
 	peractivo bit default 1
 );
 
+Select * from Usuario
+
 /*Tabla Cliente*/
 CREATE TABLE [dbo].[Usuario](
 	[usrid] [int] NOT NULL primary key identity,
